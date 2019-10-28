@@ -18,8 +18,11 @@ app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 //prevent MIME type sniffing
 app.use(helmet.noSniff());
+//prevent xss attacks
+app.use(helmet.xssFilter());
 
 //Index page (static HTML)
 app.route('/')
