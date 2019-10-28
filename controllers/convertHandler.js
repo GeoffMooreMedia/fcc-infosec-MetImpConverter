@@ -10,6 +10,7 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
+    const unitChars = ['G','l','L','kg','km','m'];
     
     return result;
   };
