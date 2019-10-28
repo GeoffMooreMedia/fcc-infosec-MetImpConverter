@@ -94,9 +94,10 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
-    
-    return result;
+    //switch based on unit
+    switch(initUnit){
+      
+    }
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
@@ -112,7 +113,7 @@ function ConvertHandler() {
     }
 
     //convert the values
-    return {initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: '3.1 miles converts to 5.00002 kilometers'}
+    return {initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum.toFixed(5)} ${this.spellOutUnit(returnUnit)}`};
   };
   
 }
