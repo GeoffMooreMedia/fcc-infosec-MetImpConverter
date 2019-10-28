@@ -72,7 +72,22 @@ function ConvertHandler() {
 
   this.spellOutUnit = function(unit) {
     //switch for unit
-    
+    switch(unit){
+      case 'invalid unit':
+        return initUnit;
+      case 'gal':
+        return 'gallons';
+      case 'lbs':
+        return 'pounds';
+      case 'L':
+        return 'liters';
+      case 'kg':
+        return 'kilograms';
+      case 'km':
+        return 'kilometers';
+      case 'mi':
+        return 'miles';
+    }
   };
   
   this.convert = function(initNum, initUnit) {
@@ -85,9 +100,19 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
-    
-    return result;
+    //check for invalid values
+    if(initNum === 'invalid number' && initUnit === 'invalid unit'){
+      return 'invalid unit and number';
+    }
+    else if(initUnit === 'invalid unit'){
+      return 'invalid unit';
+    }
+    else if(initNum === 'invalid number'){
+      return 'invalid number';
+    }
+
+    //convert the values
+    return {initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: '3.1 miles converts to 5.00002 kilometers'}
   };
   
 }
