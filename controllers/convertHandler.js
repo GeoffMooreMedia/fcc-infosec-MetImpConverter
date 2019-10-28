@@ -28,6 +28,10 @@ function ConvertHandler() {
     else{
       //get the index of the unit
       index = input.indexOf(unit);
+      //if no number was provided
+      if(index === 0){
+        return 1;//default to 1
+      }
       //split off the number portion
       return input.slice(0,index);
     }
@@ -47,15 +51,28 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    var result;
-    
-    return result;
+    //switch for init unit
+    switch(initUnit){
+      case 'invalid unit':
+        return initUnit;
+      case 'gal':
+        return 'L';
+      case 'lbs':
+        return 'kg';
+      case 'L':
+        return 'gal';
+      case 'kg':
+        return 'lbs';
+      case 'km':
+        return 'mi';
+      case 'mi':
+        return 'km';
+    }
   };
 
   this.spellOutUnit = function(unit) {
-    var result;
+    //switch for unit
     
-    return result;
   };
   
   this.convert = function(initNum, initUnit) {
