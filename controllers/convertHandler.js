@@ -9,22 +9,28 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
-    let index; //index of the unit
+    let index = null; //index of the unit
     //get the unit
     const unit = this.getUnit(input);
     //if the unit is invalid
-    if(unit === 'invalid number'){
+    if(unit === 'invalid unit'){
       //search backwards from the end to find the last number
       for(let i = input.length-1; i >= 0; i++){
         //if the character is a number
         if(!isNaN(input[i])){
           index = i + 1;
+          break;
         }
       }
+      //if no number was found
+      if(!index)return 'invalid number';
     }
-    
-    return result;
+    else{
+      //get the index of the unit
+      index = input.indexOf(unit);
+      //split off the number portion
+      return input.slice(0,index);
+    }
   };
   
   this.getUnit = function(input) {
@@ -37,7 +43,7 @@ function ConvertHandler() {
         return unit;
       }
     });
-    return 'invalid number';
+    return 'invalid unit';
   };
   
   this.getReturnUnit = function(initUnit) {
