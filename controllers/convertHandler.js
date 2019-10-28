@@ -10,15 +10,23 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    const unitChars = ['G','l','L','kg','km','m'];
+    
+
     
     return result;
   };
   
   this.getUnit = function(input) {
-    var result;
-    
-    return result;
+    const units = ['gal','lbs','L','kg','km','mi'];
+    //look for each unit in the string
+    units.forEach(unit=>{
+      //if the unit exists in the string
+      if(input.indexOf(unit) >= 0){
+        //return the unit
+        return unit;
+      }
+    });
+    return 'invalid number';
   };
   
   this.getReturnUnit = function(initUnit) {
