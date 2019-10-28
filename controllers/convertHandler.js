@@ -10,8 +10,19 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    
-
+    let index; //index of the unit
+    //get the unit
+    const unit = this.getUnit(input);
+    //if the unit is invalid
+    if(unit === 'invalid number'){
+      //search backwards from the end to find the last number
+      for(let i = input.length-1; i >= 0; i++){
+        //if the character is a number
+        if(!isNaN(input[i])){
+          index = i + 1;
+        }
+      }
+    }
     
     return result;
   };
