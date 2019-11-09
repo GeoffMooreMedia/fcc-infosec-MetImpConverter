@@ -96,7 +96,20 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     //switch based on unit
     switch(initUnit){
-      
+      case 'invalid unit':
+        return initNum;
+        case 'gal':
+          return initNum*galToL;
+        case 'lbs':
+          return initNum*lbsToKg;
+        case 'L':
+          return initNum/galToL;
+        case 'kg':
+          return initNum/lbsToKg;
+        case 'km':
+          return initNum/miToKm;
+        case 'mi':
+          return initNum*miToKm;
     }
   };
   
