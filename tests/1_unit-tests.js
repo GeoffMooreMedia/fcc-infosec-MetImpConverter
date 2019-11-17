@@ -29,19 +29,21 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input', function(done) {
-      var input = '32.5/2L';
-      assert.equal(convertHandler.getNum(input),16.25)
+      var input = '32/2L';
+      assert.equal(convertHandler.getNum(input),16)
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '32.5/2L';
+      assert.equal(convertHandler.getNum(input),16.25);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '32/2/5';
+      assert.equal(convertHandler.getNum(input),'invalid number');
+      done();
     });
     
     test('No Numerical Input', function(done) {

@@ -15,7 +15,7 @@ function ConvertHandler() {
     //if the unit is invalid
     if(unit === 'invalid unit'){
       //search backwards from the end to find the last number
-      for(let i = input.length-1; i >= 0; i++){
+      for(let i = input.length-1; i >= 0; i--){
         //if the character is a number
         if(!isNaN(input[i])){
           index = i + 1;
@@ -32,8 +32,26 @@ function ConvertHandler() {
       if(index === 0){
         return 1;//default to 1
       }
-      //split off the number portion
-      return input.slice(0,index);
+      else{
+        //slice off the number portion
+        let numChars = input.slice(0,index);
+        //split by / to handle fractions
+        numChars = numChars.split('/');
+        //if there is no fraction
+        if(numChars.length === 1){
+          //just return the number
+          return numChars[0];
+        }
+        //if there is a valid fraction
+        else if(numChars.length === 2){
+          return numChars[0]/numChars[1];
+        }
+        //if there is more than one fraction
+        else{
+          return 'invalid number';
+        }
+      }
+      
     }
   };
   
