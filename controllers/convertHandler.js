@@ -39,15 +39,16 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     const units = ['gal','lbs','L','kg','km','mi'];
+    let returnUnit = 'invalid unit';
     //look for each unit in the string
     units.forEach(unit=>{
       //if the unit exists in the string
       if(input.indexOf(unit) >= 0){
         //return the unit
-        return unit;
+        returnUnit = unit;
       }
     });
-    return 'invalid unit';
+    return returnUnit;
   };
   
   this.getReturnUnit = function(initUnit) {
