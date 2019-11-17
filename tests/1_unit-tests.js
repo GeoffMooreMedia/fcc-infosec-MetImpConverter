@@ -41,14 +41,15 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      var input = '32/2/5';
+      var input = '32/2/5L';
       assert.equal(convertHandler.getNum(input),'invalid number');
       done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      var input = 'L';
+      assert.equal(convertHandler.getNum(input),1);
+      done();
     }); 
     
   });
