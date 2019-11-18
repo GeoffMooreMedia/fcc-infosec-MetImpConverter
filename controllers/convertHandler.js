@@ -24,6 +24,7 @@ function ConvertHandler() {
       }
       //if no number was found
       if(!index)return 'invalid number';
+      //TODO: Process number
     }
     else{
       //get the index of the unit
