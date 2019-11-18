@@ -130,13 +130,17 @@ suite('Unit Tests', function(){
     });
     
     test('Lbs to Kg', function(done) {
-      
-      //done();
+      var input = [5,'lbs'];
+      var expected = 2.267962;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
+      done();
     });
     
     test('Kg to Lbs', function(done) {
+      var input = [5,'kg'];
+      var expected = 11.02311;
       
-      //done();
+      done();
     });
     
   });
