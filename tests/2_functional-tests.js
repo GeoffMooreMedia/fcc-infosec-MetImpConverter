@@ -39,9 +39,7 @@ suite('Functional Tests', function() {
           .query({input:'32g'})
           .end(function(err,res){
             assert.equal(res.status,200);
-            assert.equal(res.body.initNum,32);
-            assert.equal(res.body.initUnit,'invalid unit');
-            assert.equal(res.)
+            assert.equal(res.body,'in');
             done();
           });
         
