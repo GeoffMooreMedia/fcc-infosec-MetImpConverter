@@ -135,7 +135,7 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     //check for invalid values
     if(initNum === 'invalid number' && initUnit === 'invalid unit'){
-      return 'invalid unit and number';
+      return 'invalid number and unit';
     }
     else if(initUnit === 'invalid unit'){
       return 'invalid unit';
