@@ -24,7 +24,6 @@ function ConvertHandler() {
       }
       //if no number was found
       if(!index)return 'invalid number';
-      //otherwise process the number
       else return processNum();
     }
     else{
@@ -35,7 +34,7 @@ function ConvertHandler() {
         return 1;//default to 1
       }
       else{
-        return this.processNum();
+        return processNum();
       }
       
     }
@@ -43,7 +42,7 @@ function ConvertHandler() {
     /*
     * Process the found number
     */
-   this.processNum = function(){
+   function processNum(){
     //slice off the number portion
     let numChars = input.slice(0,index);
     //split by / to handle fractions
@@ -61,7 +60,7 @@ function ConvertHandler() {
     else{
       return 'invalid number';
     }
-   }
+  }
   };
   
   this.getUnit = function(input) {

@@ -70,8 +70,10 @@ suite('Functional Tests', function() {
       });
       
       test('Convert kg (no number)', function(done) {
-        
-        //done();
+        chai.request(server)
+          .get('/api/convert')
+          .query({input:})
+        done();
       });
       
     });
