@@ -24,7 +24,8 @@ function ConvertHandler() {
       }
       //if no number was found
       if(!index)return 'invalid number';
-      //TODO: Process number
+      //otherwise process the number
+      else return processNum();
     }
     else{
       //get the index of the unit
@@ -34,26 +35,33 @@ function ConvertHandler() {
         return 1;//default to 1
       }
       else{
-        //slice off the number portion
-        let numChars = input.slice(0,index);
-        //split by / to handle fractions
-        numChars = numChars.split('/');
-        //if there is no fraction
-        if(numChars.length === 1){
-          //just return the number
-          return numChars[0];
-        }
-        //if there is a valid fraction
-        else if(numChars.length === 2){
-          return numChars[0]/numChars[1];
-        }
-        //if there is more than one fraction
-        else{
-          return 'invalid number';
-        }
+        return this.processNum();
       }
       
     }
+
+    /*
+    * Process the found number
+    */
+   this.processNum = function(){
+    //slice off the number portion
+    let numChars = input.slice(0,index);
+    //split by / to handle fractions
+    numChars = numChars.split('/');
+    //if there is no fraction
+    if(numChars.length === 1){
+      //just return the number
+      return numChars[0];
+    }
+    //if there is a valid fraction
+    else if(numChars.length === 2){
+      return numChars[0]/numChars[1];
+    }
+    //if there is more than one fraction
+    else{
+      return 'invalid number';
+    }
+   }
   };
   
   this.getUnit = function(input) {
